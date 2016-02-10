@@ -1,8 +1,4 @@
 /**
- * 
- */
-
-/**
  * @author mili
  *
  */
@@ -13,10 +9,10 @@ public enum Setting {
 	private Setting(String setting) {
 		mSetting = setting;
 	}
-	
+
 	@Override
 	public String toString() {
 		return mSetting;
 	}
-	
+
 }

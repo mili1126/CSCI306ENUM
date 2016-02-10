@@ -1,16 +1,15 @@
-
 /**
  * @author mili
  *
  */
 public class Burner {
 	public static final int TIME_DURATION = 2;
-	
+
 	public enum Temperature {
 		HOT ("HOT SURFACE! DON'T TOUCH"), WARM ("CAREFUL"), COLD ("cooool");
-		
+
 		private String mTemperature;
-		
+
 		private Temperature(String temperature) {
 			mTemperature = temperature;
 		}
@@ -20,13 +19,13 @@ public class Burner {
 			return mTemperature;
 		}
 	};
-	
+
 	private Temperature mTemperature;
 	private Setting mSetting;
 
 	private int mTimer;
 
-	
+
 	public Burner() {
 		super();
 		mSetting = Setting.OFF;
@@ -37,7 +36,7 @@ public class Burner {
 	public Temperature getTemperature() {
 		return mTemperature;
 	}
-	
+
 	public void updateTemperature() {
 		if (mTimer > 0) mTimer--;
 		if(mTimer==0) {
@@ -56,11 +55,11 @@ public class Burner {
 				break;
 			default:
 				break;
-			
+
 			}
 		}
 	}
-	
+
 	public void increaseSetting () {
 
 		switch (mSetting) {
@@ -79,9 +78,9 @@ public class Burner {
 			break;
 		}
 		mTimer += TIME_DURATION;
-		
+
 	}
-	
+
 	public void decreaseSetting () {
 
 		switch (mSetting) {
@@ -100,9 +99,9 @@ public class Burner {
 			break;		
 		}
 		mTimer += TIME_DURATION;
-		
+
 	}
-	
+
 	public void display () {
 		System.out.println("[" + mSetting + "]" + "....." + mTemperature);
 	}
